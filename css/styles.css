@@ -40,6 +40,8 @@ img {
 /* HEADER */
 .page-header {
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
 }
 .header-container {
   display: flex;
@@ -83,6 +85,31 @@ img {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #2e2f42;
+  /*анімацію кольору задаєм на саме посилання,не в ховер,інакше анімація буде в 1 сторону*/
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav-link.current {
+  position: relative; /*щоб відносно нього(ел посилання) зпозиціонувати привязати псевдоелемент */
+  color: #404bbf;
+}
+/*-створюєм псевдоелемент */
+.nav-link.current::after {
+  content: '';
+  position: absolute;
+  left: 0; /*ліва точка,початок співпадає відносно з початком слова посилання*/
+  bottom: -1px; /* нижня точка початку*/
+
+  width: 100%; /*не має бути фіксована, має бути по шир слова-посилання*/
+  height: 4px;
+  background-color: #404bbf;
+  border-radius: 2px;
+}
+.nav-link:hover,
+.nav-link:focus,
+.address-link:hover,
+.address-link:focus {
+  color: #404bbf;
 }
 .address {
   margin-left: auto;
@@ -95,18 +122,23 @@ img {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
+transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.nav-link:hover,
-.nav-link:focus,
-.address-link:hover,
-.address-link:focus {
-  color: #404bbf;
-}
+
 /* SECTION 1 */
 .hero-image {
   background: #2e2f42;
   padding-top: 188px;
   padding-bottom: 188px;
+  width: 1440px;
+  margin: 0 auto;
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(/images/people.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .page-title {
   font-weight: 700;
@@ -135,8 +167,8 @@ button {
   border-radius: 4px;
   min-width: 169px;
 }
-.button:hover,
-.button:focus {
+.button-text:hover,
+.button-text:focus {
   background-color: #404bbf;
 }
 /* SECTION 2 */
@@ -214,7 +246,22 @@ button {
   padding: 32px 0;
   text-align: center;
 }
+.items-container {
+  width: 232px;
+  height: 40px;
+}
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
 
+  fill: #4d5ae5;
+}
+/* .icon-fourth:last-child {margin-right: 0;} */
+.icons:not(:last-child) {
+  margin-right: 24px;
+}
 /* SECTION 4 */
 
 .our-portfolio {
@@ -262,6 +309,5 @@ button {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #f4f4fd;
-   max-width: 264px;
+  max-width: 264px;
 }
-
