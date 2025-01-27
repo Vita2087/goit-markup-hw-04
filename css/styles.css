@@ -137,7 +137,7 @@ img {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(/images/people.jpg);
+    url(../images/people.jpg);
   background-repeat: no-repeat;
   background-size: cover; /* для позиц bg-img на всю площу фону елемента*/
   background-position: center;
@@ -288,7 +288,7 @@ button {
 }
 .soc-link:hover,
 .soc-link:focus {
-  background-color: #404bbf; /* #31d0aa;*/
+  background-color: /* #404bbf;*/ #31d0aa;
 }
 .soc-icon {
   fill: #f4f4fd;
@@ -386,9 +386,9 @@ button {
   display: flex;
   align-items: baseline; /*вирівнює блоки по вертикалі відносно лінії тексту першого рядка кожного елемента*/
 }
-.footer-el-two {
+/* .footer-el-two {
   padding-bottom: 132px;
-}
+} */
 .footer-p-two {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
