@@ -288,7 +288,7 @@ button {
 }
 .soc-link:hover,
 .soc-link:focus {
-  background-color: /* #404bbf;*/ #31d0aa;
+  background-color:  #404bbf; /*#31d0aa;*/
 }
 .soc-icon {
   fill: #f4f4fd;
